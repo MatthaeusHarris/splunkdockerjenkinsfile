@@ -1,8 +1,23 @@
 #!groovy
 
-node {
+pipeline {
+  agent any
 
-    stage("I am j0b") {
-        echo "hello world"
+  stages {
+    stage('Build') {
+      steps {
+        echo 'Building'
+      }
     }
+    stage('Test') {
+      steps {
+        echo 'Testing'
+      }
+    }
+    stage('Deploy') {
+      steps {
+        echo 'Deploying'
+      }
+    }
+  }
 }
